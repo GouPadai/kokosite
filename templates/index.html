@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>KOKO exit interview</title>
+    <style>
+        body{
+            margin:50px;
+        }
+        h1{
+            padding-bottom :50px;
+        }
+        .form-group,.col-auto{
+            padding:10px;
+            font-size: 20px;
+        }
+        legend{
+            font-size: 30px;
+            font-weight: bolder; 
+            
+        }
+        .le2{
+            padding-top: 50px;
+            font-weight: bolder; 
+        }
+        .sle{
+            font-size:25px;
+            padding:10px;
+            font-weight: bolder; 
+        }
+        .checkbox{
+            padding-left:50px;
+        }
+        .col-md-4{
+            width: fit-content;
+        }   
+        .control-label{
+            display: inline;
+            font-weight: bold; 
+        }
+        .radio-inline{
+            padding:20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Koko Exit Interview</h1>
+    
+    <form class="form-horizontal" method="post" >
+    {%csrf_token%}
+        <fieldset>
+        
+        <!-- Form Name -->
+        <legend>Exit interview</legend>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="cn">Company name</label>  
+          <div class="col-md-4">
+          <input id="cn" name="cn" type="text" placeholder="Eg.Koko" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="en">Employee name</label>  
+          <div class="col-md-4">
+          <input id="en" name="en" type="text" placeholder="Eg. John Dwayne" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="pos">Posistion</label>  
+            <div class="col-md-4">
+            <input id="pos" name="pos" type="text" placeholder="Eg. Manager" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+        <!-- Date input-->
+        <div class="form-group ">
+            <label class="control-label col-md-4 " for="date">
+            Date of Interview
+            </label>
+            <div class="col-md-4">
+            <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" required=""></div>
+        </div>
+
+
+
+
+        <!-- Multiple Checkboxes -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="checkboxes">What are the reasons for leaving?</label>
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label for="checkboxes-0">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Higher pay">
+                        Higher pay
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-1">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Improved work life balance">
+                        Improved work life balance
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-2">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Conflict with other employees">
+                        Conflict with other employees
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-3">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Company instability">
+                        Company instability
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-4">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Better benefits">
+                        Better benefits
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-5">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Career change">
+                        Career change
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-6">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Conflict with managers">
+                        Conflict with managers
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-7">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-7" value="Better career opportunity">
+                        Better career opportunity
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-8">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-8" value="Closer to home">
+                        Closer to home
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-9">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-9" value="Family and/or personal">
+                        Family and/or personal
+                    </label>
+                </div>
+            </div>
+        </div>
+          
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="col">Comments</label>
+            <div class="col-md-5">
+                <input id="col" name="col" type="text" placeholder="Comments if any" class="form-control input-md">
+        
+            </div>
+        </div>
+
+        <legend class="le2">Please Rank The following:</legend>
+        <legend class="sle">The Job itself</legend>
+
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="jwc">Job was challenging</label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="jwc-0">
+                    <input type="radio" name="jwc" id="jwc-0" value="Strongly agree" >
+                    Strongly agree
+                </label>
+                <label class="radio-inline" for="jwc-1">
+                    <input type="radio" name="jwc" id="jwc-1" value="Agree">
+                    Agree
+                </label>
+                <label class="radio-inline" for="jwc-2">
+                    <input type="radio" name="jwc" id="jwc-2" value="Disagree">
+                    Disagree
+                </label>
+                <label class="radio-inline" for="jwc-3">
+                    <input type="radio" name="jwc" id="jwc-3" value="Strongly Disagree">
+                    Strongly Disagree
+                </label>
+            </div>
+        </div>
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="so">There were sufficient opportunities for advancement </label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="so-0">
+                    <input type="radio" name="so" id="so-0" value="Strongly agree" >
+                    Strongly agree
+                </label>
+                <label class="radio-inline" for="so-1">
+                    <input type="radio" name="so" id="so-1" value="Agree">
+                    Agree
+                </label>
+                <label class="radio-inline" for="so-2">
+                    <input type="radio" name="so" id="so-2" value="Disagree">
+                    Disagree
+                </label>
+                <label class="radio-inline" for="so-3">
+                    <input type="radio" name="so" id="so-3" value="Strongly Disagree">
+                    Strongly Disagree
+                </label>
+            </div>
+        </div>
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="wwm">Workload was manageable </label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="wwm-0">
+                    <input type="radio" name="wwm" id="wwm-0" value="Strongly agree" >
+                    Strongly agree
+                </label>
+                <label class="radio-inline" for="wwm-1">
+                    <input type="radio" name="wwm" id="wwm-1" value="Agree">
+                    Agree
+                </label>
+                <label class="radio-inline" for="wwm-2">
+                    <input type="radio" name="wwm" id="wwm-2" value="Disagree">
+                    Disagree
+                </label>
+                <label class="radio-inline" for="wwm-3">
+                    <input type="radio" name="wwm" id="wwm-3" value="Strongly Disagree">
+                    Strongly Disagree
+                </label>
+            </div>
+        </div>
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="ssc">Sufficient resources and staff were available</label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="ssc-0">
+                    <input type="radio" name="ssc" id="ssc-0" value="Strongly agree" >
+                    Strongly agree
+                </label>
+                <label class="radio-inline" for="ssc-1">
+                    <input type="radio" name="ssc" id="ssc-1" value="Agree">
+                    Agree
+                </label>
+                <label class="radio-inline" for="ssc-2">
+                    <input type="radio" name="ssc" id="ssc-2" value="Disagree">
+                    Disagree
+                </label>
+                <label class="radio-inline" for="ssc-3">
+                    <input type="radio" name="ssc" id="ssc-3" value="Strongly Disagree">
+                    Strongly Disagree
+                </label>
+            </div>
+        </div>
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="cl">Your colleagues listened and appreciated your suggestions </label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="cl-0">
+                    <input type="radio" name="cl" id="cl-0" value="Strongly agree" >
+                    Strongly agree
+                </label>
+                <label class="radio-inline" for="cl-1">
+                    <input type="radio" name="cl" id="cl-1" value="Agree">
+                    Agree
+                </label>
+                <label class="radio-inline" for="cl-2">
+                    <input type="radio" name="cl" id="cl-2" value="Disagree">
+                    Disagree
+                </label>
+                <label class="radio-inline" for="cl-3">
+                    <input type="radio" name="cl" id="cl-3" value="Strongly Disagree">
+                    Strongly Disagree
+                </label>
+            </div>
+        </div>
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="seu">Your skills were effectively used </label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="seu-0">
+                    <input type="radio" name="seu" id="seu-0" value="Strongly agree" >
+                    Strongly agree
+                </label>
+                <label class="radio-inline" for="seu-1">
+                    <input type="radio" name="seu" id="seu-1" value="Agree">
+                    Agree
+                </label>
+                <label class="radio-inline" for="seu-2">
+                    <input type="radio" name="seu" id="seu-2" value="Disagree">
+                    Disagree
+                </label>
+                <label class="radio-inline" for="seu-3">
+                    <input type="radio" name="seu" id="seu-3" value="Strongly Disagree">
+                    Strongly Disagree
+                </label>
+            </div>
+        </div>
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="at">You had access to adequate training and development programs </label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="at-0">
+                    <input type="radio" name="at" id="at-0" value="Strongly agree" >
+                    Strongly agree
+                </label>
+                <label class="radio-inline" for="at-1">
+                    <input type="radio" name="at" id="at-1" value="Agree">
+                    Agree
+                </label>
+                <label class="radio-inline" for="at-2">
+                    <input type="radio" name="at" id="at-2" value="Disagree">
+                    Disagree
+                </label>
+                <label class="radio-inline" for="at-3">
+                    <input type="radio" name="at" id="at-3" value="Strongly Disagree">
+                    Strongly Disagree
+                </label>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="coj">What do you think can be improved about the job?</label>
+            <div class="col-md-5">
+                <input id="coj" name="coj" type="text" placeholder="Eg. Better work gear" class="form-control input-md">
+        
+            </div>
+        </div>
+
+        <legend class="sle">Remuneration & Benefits</legend>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-auto">
+            <button id="sub" type="submit" class="btn btn-primary">Submit</button>
+        </div> 
+
+
+
+
+
+
+
+        </fieldset>
+        </form>
+        
+        
+</body>
+</html>
